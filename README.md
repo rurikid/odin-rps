@@ -1,1 +1,1 @@
-#Rock Paper Scissors for Odin Project
+# Rock Paper Scissors for Odin Project
