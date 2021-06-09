@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<header>
+		<link rel="stylesheet" href="style.css">
 		<title>Rock Paper Scissors</title>
 	</header>
 	<body>
@@ -10,22 +11,22 @@
 		<div class="content">
 			<div class="instructions">
 				<h1>Let's Play Rock Paper Scissors!</h1>
-				<form>
-					<label for="round-select">Select the number of rounds you'd like to play:</label>
-					<input name="round-select" id="round-select" type="text" />
+				<label for="round-select">Select the number of rounds you'd like to play:</label>
+				<form name="round-select">
+					<input id="round-select" type="text" />
 					<button type="submit">Submit</button>
 				</form>
 			</div>
-			<div class="action-select">
-				<p>Rock</p>
-				<p>Paper</p>
-				<p>Scissors</p>
-			</div>
-			<div class="round-tally">
-				<p>Player:<span id="player-score"></span></p>
-				<p>AI:<span id="ai-score"></span></p>
-				<p>Draw:<span id="draw-count"></span></p>
-			</div>
+			<ul class="action-select">
+				<li><button id="rock-select">Rock</button></li>
+				<li><button id="paper-select">Paper</button></li>
+				<li><button id="scissors-select">Scissors</button></li>
+			</ul>
+			<ul class="round-tally">
+				<li>Player:<span id="player-score"></span></li>
+				<li>AI:<span id="ai-score"></span></li>
+				<li>Draw:<span id="draw-count"></span></li>
+			</ul>
 		</div>
 		<footer>
 			<p>This app was developed by Rurikid for an assignment on Odin Project.</p>
