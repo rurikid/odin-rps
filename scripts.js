@@ -5,10 +5,6 @@ let player = 0;
 let ai = 0;
 let draw = 0;
 
-function game() {
-
-}
-
 function round(playerSelection, aiSelection) {
 	switch (playerSelection)
 	{
