@@ -2,12 +2,10 @@
 <html>
 	<header>
 		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="scripts.js"></script>
 		<title>Rock Paper Scissors</title>
 	</header>
 	<body>
-		<div class="top-bar">
-			Perhaps some links to my other projects!
-		</div>
 		<div class="content">
 			<div class="instructions">
 				<h1>Let's Play Rock Paper Scissors!</h1>
@@ -18,10 +16,11 @@
 				</form>
 			</div>
 			<ul class="action-select">
-				<li><button id="rock-select">Rock</button></li>
-				<li><button id="paper-select">Paper</button></li>
-				<li><button id="scissors-select">Scissors</button></li>
+				<li><button id="rock-select" onclick="selectClick(this);">Rock</button></li>
+				<li><button id="paper-select" onclick="selectClick(this);">Paper</button></li>
+				<li><button id="scissors-select" onclick="selectClick(this);">Scissors</button></li>
 			</ul>
+			<h2>Round Tally</h2>
 			<ul class="round-tally">
 				<li>Player:<span id="player-score"></span></li>
 				<li>AI:<span id="ai-score"></span></li>
@@ -29,8 +28,7 @@
 			</ul>
 		</div>
 		<footer>
-			<p>This app was developed by Rurikid for an assignment on Odin Project.</p>
-			<p>VarangianStudios!</p>
+			<p class="signature"><span class="o-slash">Ø</span><a href="https://www.github.com/rurikid">Rurikid</a> for <a href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors">The Odin Project</a></p>
 		</footer>
 	</body>
 </html>
