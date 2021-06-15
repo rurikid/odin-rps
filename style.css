@@ -106,12 +106,29 @@ form button {
 	justify-content: space-between;
 }
 
-.tally {
+.score-area {
 	align-self: flex-start;
 	justify-self: center;
 	display: flex;
 	flex-direction: column;
 	margin-top: 10px;
+	width: 150px;
+}
+
+.score-area h2 {
+	text-decoration: underline;
+	align-self: center;
+}
+
+.tally {
+	align-self: flex-start;
+	justify-self: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	font-size: 32px;
 }
 
 .action-select button {

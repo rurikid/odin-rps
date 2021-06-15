@@ -5,20 +5,27 @@ let player = 0;
 let ai = 0;
 let draw = 0;
 
+const rockIcon = '<i class="fas fa-gem"></i>';
+const paperIcon = '<i class="fas fa-paper-plane"></i>';
+const scissorsIcon = '<i class="fas fa-cut"></i>';
+
 function round(playerSelection, aiSelection) {
 	switch (playerSelection)
 	{
 		case rock:
-			aiSelection == paper ? increment("ai") : 
-			(aiSelection == scissors ? increment("player") : increment("draw"));
+			aiSelection == paper ? increment("ai", `AI&nbsp${paperIcon}&nbspbeats your&nbsp${rockIcon}`) : 
+			(aiSelection == scissors ? increment("player", `Your&nbsp${paperIcon}&nbspbeats AI&nbsp${scissorsIcon}`) : 
+			increment("draw", `${rockIcon}&nbspvs&nbsp${rockIcon}... DRAW`));
 			break;
 		case paper:
-			aiSelection == scissors ? increment("ai") : 
-			(aiSelection == rock ? increment("player") : increment("draw"));
+			aiSelection == scissors ? increment("ai", `AI&nbsp${scissorsIcon}&nbspbeats your&nbsp${paperIcon}`) : 
+			(aiSelection == rock ? increment("player", `Your&nbsp${paperIcon}&nbspbeats AI&nbsp${rockIcon}`) : 
+			increment("draw", `${paperIcon}&nbspvs&nbsp${paperIcon}... DRAW`));
 			break;
 		case scissors:
-			aiSelection == rock ? increment("ai") : 
-			(aiSelection == paper ? increment("player") : increment("draw"));
+			aiSelection == rock ? increment("ai", `AI&nbsp${paperIcon}&nbspbeats your&nbsp${scissorsIcon}`) : 
+			(aiSelection == paper ? increment("player", `Your&nbsp${scissorsIcon} beats AI&nbsp${paperIcon}`) : 
+			increment("draw", `${scissorsIcon}&nbspvs&nbsp${scissorsIcon}... DRAW`));
 			break;
 	}
 }
@@ -37,19 +44,34 @@ function aiSelect() {
 let playerScore = 0;
 let aiScore = 0;
 let drawCount = 0;
+const winTally = '<li><i class="fas fa-trophy"></i></li>';
+let playerTally = '';
+let aiTally = '';
 
-function increment(label) {
+function increment(label, status) {
+	document.getElementById("game-status").innerHTML = status;
+
 	switch (label)
 	{
 		case "player":
-			document.getElementById("player-score").innerHTML = ++playerScore;
+			document.getElementById("player-tally").innerHTML += winTally;
+			playerScore++;
 			break;
 		case "ai":
-			document.getElementById("ai-score").innerHTML = ++aiScore;
+			document.getElementById("ai-tally").innerHTML += winTally;
+			aiScore++;
 			break;
 		case "draw":
-			document.getElementById("draw-count").innerHTML = ++drawCount;
 			break;
+	}
+
+	if (aiScore == 3)
+	{
+		document.getElementById("game-status").innerHTML += "<br />AI won this game!";
+	}
+	if (playerScore == 3)
+	{
+		document.getElementById("game-status").innerHTML += "<br />You won this game!";
 	}
 }
 
