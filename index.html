@@ -2,33 +2,35 @@
 <html>
 	<header>
 		<link rel="stylesheet" href="style.css">
+		<script src="https://kit.fontawesome.com/290888557e.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="scripts.js"></script>
 		<title>Rock Paper Scissors</title>
 	</header>
 	<body>
+		<h1>Rock, Paper, Scissors!</h1>
 		<div class="content">
-			<div class="instructions">
-				<h1>Let's Play Rock Paper Scissors!</h1>
-				<label for="round-select">Select the number of rounds you'd like to play:</label>
-				<form name="round-select">
-					<input id="round-select" type="text" />
-					<button type="submit">Submit</button>
-				</form>
+			<h2 id="game-status">Best of Five Wins!</h2>
+			<div class="game-area">
+				<div class="score-area">
+					<h2>Player</h2>
+					<ul class="tally" id="player-tally">
+					</ul>
+				</div>
+				<ul class="action-select" id="action-select">
+					<li><button id="rock-select" onclick="selectClick(this);"><i class="fas fa-gem"></i></button></li>
+					<li><button id="paper-select" onclick="selectClick(this);"><i class="fas fa-paper-plane"></i></button></li>
+					<li><button id="scissors-select" onclick="selectClick(this);"><i class="fas fa-cut"></i></button></li>
+				</ul>
+				<div class="score-area">
+					<h2>Computer</h2>
+					<ul class="tally" id="ai-tally">
+					</ul>
+				</div>
 			</div>
-			<ul class="action-select">
-				<li><button id="rock-select" onclick="selectClick(this);">Rock</button></li>
-				<li><button id="paper-select" onclick="selectClick(this);">Paper</button></li>
-				<li><button id="scissors-select" onclick="selectClick(this);">Scissors</button></li>
-			</ul>
-			<h2>Round Tally</h2>
-			<ul class="round-tally">
-				<li>Player:<span id="player-score"></span></li>
-				<li>AI:<span id="ai-score"></span></li>
-				<li>Draw:<span id="draw-count"></span></li>
-			</ul>
+			<div class="game-over" id="game-over"></div>
 		</div>
 		<footer>
-			<p class="signature"><span class="o-slash">Ø</span><a href="https://www.github.com/rurikid">Rurikid</a> for <a href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors">The Odin Project</a></p>
+			<p class="signature"><span class="o-slash">Ø</span><a href="https://www.github.com/rurikid">Rurikid</a> for <a class="top" href="https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors">The Odin Project</a></p>
 		</footer>
 	</body>
 </html>
